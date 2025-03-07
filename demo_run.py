@@ -50,7 +50,9 @@ profile_job = hub.submit_profile_job(
     model=target_model,
     device=hub.Device("Samsung Galaxy S24 (Family)"),
 )
-
+profile = profile_job.download_profile()
+profile_execution_summary = profile["execution_summary"]
+print(f"Profile execution summary: {profile_execution_summary}")
 #########################################################################################################
 # Step 4: Run inference on cloud-hosted device
 sample_image_url = ("https://qaihub-public-assets.s3.us-west-2.amazonaws.com/apidoc/input_image1.jpg")
